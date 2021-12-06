@@ -1,0 +1,10 @@
+.sideNav {
+  text-align: center;
+  background-color: #5bbbd8;
+  min-width: 200px;
+  height: 100vh;
+}
+.sideNav__logo {
+  width: 100%;
+  padding: 10px;
+}
