@@ -3,9 +3,13 @@ import React, { useEffect, useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import Main from "./components/Main/Main";
 
+// import beersData from "./data/beers";
+
 const App = () => {
-  const [beersArray, setBeersArray] = useState([]);
-  const [searchResults, setSearchResults] = useState("");
+  const [beers, setBeers] = useState([]);
+  const [searchTerm, setSeachTerm] = useState("");
+
+  const handleInput = (e) => setSeachTerm(e.target.value.toLowerCase());
 
   useEffect(() => {
     const URL = `https://api.punkapi.com/v2/beers`;
@@ -15,14 +19,14 @@ const App = () => {
       })
       .then((beersObject) => {
         console.log(beersObject);
-        setBeersArray(beersObject);
+        setBeers(beersObject);
       });
   }, []);
 
   return (
     <div className="app">
-      <NavBar />
-      <Main />
+      <NavBar handleInput={handleInput} searchTerm={searchTerm} />
+      <Main beers={beers} />
     </div>
   );
 };
