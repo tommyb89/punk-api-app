@@ -1,0 +1,16 @@
+.beer-card {
+  background-color: rgb(182, 139, 139);
+  border: 2px solid black;
+  height: 300px;
+  width: 200px;
+
+  &__img {
+    height: 100px;
+  }
+
+  &__name {
+  }
+  &__description {
+    font-size: 10px;
+  }
+}

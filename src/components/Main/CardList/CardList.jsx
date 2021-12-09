@@ -3,10 +3,21 @@ import "./CardList.scss";
 
 import Card from "./Card/Card";
 
-const CardList = () => {
+const CardList = (props) => {
+  const { beers } = props;
+  console.log(beers);
   return (
-    <div>
-      <Card />
+    <div className="beer-gallery">
+      {beers.map((beer, index) => {
+        return (
+          <Card
+            key={"name" + index}
+            name={beer.name}
+            info={beer.description}
+            srcURL={beer.image_url}
+          />
+        );
+      })}
     </div>
   );
 };

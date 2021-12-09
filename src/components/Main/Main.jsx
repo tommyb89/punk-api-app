@@ -6,7 +6,7 @@ const Main = (props) => {
   const { beers } = props;
   return (
     <main className="main">
-      <h2>Main Section</h2>
+      <h2>Beers</h2>
       <CardList beers={beers} />
     </main>
   );
