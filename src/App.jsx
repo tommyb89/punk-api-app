@@ -13,38 +13,45 @@ const App = () => {
   const [isAcidic, setIsAcidic] = useState(false);
   const [isHighAbv, setIsHighAbv] = useState(false);
 
-  const handleInput = (e) => setSeachTerm(e.target.value.toLowerCase());
+  // Handlers
+  // Function that catches input from search box
+  const handleInput = (e) => {
+    const filteredInput = e.target.value.toLowerCase();
+    setSeachTerm(filteredInput);
+  };
+  // Handle checkboxes
+  const handleHighAbv = (e) => setIsHighAbv(e.target.checked);
+  const handleClassic = (e) => setIsClassic(e.target.checked);
+  const handleAcidic = (e) => setIsAcidic(e.target.checked);
 
-  const filterBeers = () => {
+  const fetchBeers = () => {
     const beerName = searchTerm ? `&beer_name=${searchTerm}` : "";
     const classic = isClassic ? `&brewed_before=01-2011` : "";
     const highAbv = isHighAbv ? `&abv_gt=6` : "";
-    const acidic = isAcidic ? `&ibu_it=4.4` : "";
 
-    const URL = `https://api.punkapi.com/v2/beers?per_page=50${beerName}${acidic}${highAbv}${classic}`;
+    const URL = `https://api.punkapi.com/v2/beers?per_page=80${beerName}${classic}${highAbv}`;
+
     return fetch(URL)
-      .then((response) => {
-        return response.json();
-      })
-      .then((beersObject) => {
-        console.log(beersObject);
-        setBeers(beersObject);
-      });
+      .then((res) => res.json())
+      .then((beersObj) => setBeers(beersObj));
   };
 
   useEffect(() => {
-    filterBeers();
-  }, [searchTerm, isAcidic, isClassic, isHighAbv]);
-  // [
+    fetchBeers();
+  }, []);
+
+  useEffect(() => {
+    fetchBeers();
+  }, [searchTerm, isClassic, isHighAbv]);
 
   return (
     <div className="app">
       <NavBar
         handleInput={handleInput}
-        searchTerm={searchTerm}
-        filterBeers={filterBeers}
+        handleClassic={handleClassic}
+        handleHighAbv={handleHighAbv}
       />
-      <Main beers={beers} />
+      {beers && <Main beers={beers} />}
     </div>
   );
 };

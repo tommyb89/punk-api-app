@@ -5,7 +5,7 @@ const FilterItem = (props) => {
   return (
     <div>
       <label>{label}</label>
-      <input type="checkbox" onChange={onChange} />
+      <input type="checkbox" onClick={onChange} />
     </div>
   );
 };

@@ -1,16 +1,93 @@
-.beer-card {
-  background-color: rgb(182, 139, 139);
-  border: 2px solid black;
-  height: 300px;
-  width: 200px;
+.card {
+  background-color: transparent;
 
-  &__img {
-    height: 100px;
+  width: 250px;
+  height: 400px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+
+  &__inner {
+    /* This container is needed to position the front and back side */
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
   }
 
-  &__name {
+  /* Style the front side (fallback if image is missing) */
+  &__front {
+    background: linear-gradient(
+      45deg,
+      rgb(114, 113, 113) 0%,
+      rgb(97, 96, 96) 80%
+    );
+    color: black;
+    border-radius: 25px;
+    padding: 20px;
+
+    &-info {
+      border-radius: 5px;
+      width: 100%;
+      padding: 10px;
+    }
+
+    &-extra {
+      margin-top: 5px;
+
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &-extra li {
+      display: block;
+    }
   }
-  &__description {
-    font-size: 10px;
+
+  &__front-img {
+    height: 250px;
+    padding: 10px;
+  }
+
+  /* Style the back side */
+  &__back {
+    background-color: rgb(208, 210, 212);
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &-heading {
+      color: rgb(87, 87, 87);
+    }
+
+    &-tagline {
+      font-style: italic;
+      color: rgb(138, 138, 138);
+    }
+
+    &-description {
+      font-size: 12px;
+      padding: 5px;
+    }
+  }
+
+  /* Position the front and back side */
+  &__front,
+  &__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  &.card:hover .card__inner {
+    transform: rotateY(180deg);
   }
 }
