@@ -18,9 +18,9 @@ const Card = (props) => {
   } = props;
 
   return (
-    <div class="card">
-      <div class="card__inner">
-        <div class="card__front">
+    <div className="card">
+      <div className="card__inner">
+        <div className="card__front">
           <img className="card__front-img" src={srcURL} alt="Avatar" />
           <div className="card__front-info">
             <h3 className="card__front-heading">{name}</h3>
@@ -45,7 +45,7 @@ const Card = (props) => {
           </div>
         </div>
 
-        <div class="card__back">
+        <div className="card__back">
           <h3 className="card__back-heading">{tag}</h3>
           <p className="card__back-tagline">Architect & Engineer</p>
           <p className="card__back-description">{info}</p>

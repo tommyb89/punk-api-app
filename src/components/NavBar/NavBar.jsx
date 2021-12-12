@@ -10,7 +10,10 @@ const NavBar = (props) => {
 
   return (
     <nav className="sidebar">
-      <img className="sidebar__logo" src={logo} alt={"Brewdog Logo"} />
+      <div className="sidebar__logo">
+        <img src={logo} alt={"Brewdog Logo"} />
+      </div>
+
       <div className="sidebar__search">
         <h2 className="sidebar__heading">Search Beers</h2>
         <SearchBox name={"Beers"} handleInput={handleInput} />
