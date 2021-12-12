@@ -15,14 +15,18 @@ const NavBar = (props) => {
       </div>
 
       <div className="sidebar__search">
-        <h2 className="sidebar__heading">Search Beers</h2>
-        <SearchBox name={"Beers"} handleInput={handleInput} />
-        <h3 className="sidebar__heading">Filter Beers</h3>
-        <FiltersList
-          handleClassic={handleClassic}
-          handleHighAbv={handleHighAbv}
-          handleAcidic={handleAcidic}
-        />
+        <div className="sidebar__searchbox">
+          <h2 className="sidebar__heading">Search Beers</h2>
+          <SearchBox name={"Beers"} handleInput={handleInput} />
+        </div>
+        <div className="sidebar__filters">
+          <h3 className="sidebar__heading">Filter Beers</h3>
+          <FiltersList
+            handleClassic={handleClassic}
+            handleHighAbv={handleHighAbv}
+            handleAcidic={handleAcidic}
+          />
+        </div>
       </div>
     </nav>
   );
