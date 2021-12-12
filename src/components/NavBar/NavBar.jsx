@@ -14,7 +14,7 @@ const NavBar = (props) => {
       <div className="sidebar__search">
         <h2 className="sidebar__heading">Search Beers</h2>
         <SearchBox name={"Beers"} handleInput={handleInput} />
-        <h3 className="sidebar__filters-heading">Filter Beers</h3>
+        <h3 className="sidebar__heading">Filter Beers</h3>
         <FiltersList
           handleClassic={handleClassic}
           handleHighAbv={handleHighAbv}

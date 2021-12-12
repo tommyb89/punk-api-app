@@ -8,7 +8,7 @@ const FiltersList = (props) => {
   return (
     <section className="filters">
       <FilterItem label={"High ABV (> 6.0%)"} onChange={handleHighAbv} />
-      <FilterItem label={"Classics"} onChange={handleClassic} />
+      <FilterItem label={"Classic"} onChange={handleClassic} />
       <FilterItem label={"Acidic (pH < 4)"} onChange={handleAcidic} />
     </section>
   );
