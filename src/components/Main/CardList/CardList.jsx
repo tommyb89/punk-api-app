@@ -20,6 +20,10 @@ const CardList = (props) => {
             tag={beer.tagline}
             ibu={beer.ibu}
             pH={beer.ph}
+            abvText={"ABV: "}
+            ibuText={"IBU: "}
+            phText={"pH: "}
+            firstBrewedText={"First Brewed: "}
           />
         );
       })}

@@ -6,7 +6,7 @@ const Main = (props) => {
   const { beers } = props;
   return (
     <main className="main">
-      <h2>Beers</h2>
+      <h2 className="main__heading">Beer List</h2>
       <CardList beers={beers} />
     </main>
   );

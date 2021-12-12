@@ -18,24 +18,21 @@
 
   /* Style the front side (fallback if image is missing) */
   &__front {
-    background: linear-gradient(
-      45deg,
-      rgb(114, 113, 113) 0%,
-      rgb(97, 96, 96) 80%
-    );
-    color: black;
-    border-radius: 25px;
+    background: rgb(216, 216, 216, 0.9);
+    border: 2px solid black;
+    border-radius: 50px 0;
     padding: 20px;
 
     &-info {
-      border-radius: 5px;
+      border-radius: 15px;
       width: 100%;
       padding: 10px;
+      background-color: white;
     }
 
     &-extra {
       margin-top: 5px;
-
+      font-size: 14px;
       display: flex;
       justify-content: space-around;
     }
@@ -43,36 +40,43 @@
     &-extra li {
       display: block;
     }
+
+    &-extra span {
+      font-weight: bold;
+    }
   }
 
   &__front-img {
-    height: 250px;
+    height: 220px;
     padding: 10px;
+    transform: rotate(20deg);
   }
 
   /* Style the back side */
   &__back {
-    background-color: rgb(208, 210, 212);
+    background-color: rgb(34, 35, 37);
     color: white;
     transform: rotateY(180deg);
-    border-radius: 25px;
+    border-radius: 0 50px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    border: 2px solid rgb(243, 243, 243);
 
     &-heading {
-      color: rgb(87, 87, 87);
+      color: rgb(255, 255, 255);
     }
 
     &-tagline {
       font-style: italic;
-      color: rgb(138, 138, 138);
+      color: rgb(253, 253, 253);
+      text-decoration: underline;
     }
 
     &-description {
       font-size: 12px;
       padding: 5px;
+      color: white;
     }
   }
 

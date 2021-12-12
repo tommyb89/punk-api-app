@@ -2,7 +2,20 @@ import React, { useState } from "react";
 import "./Card.scss";
 
 const Card = (props) => {
-  const { name, info, srcURL, abv, ibu, yearBrewed, tag, pH } = props;
+  const {
+    name,
+    info,
+    srcURL,
+    abv,
+    ibu,
+    yearBrewed,
+    tag,
+    pH,
+    abvText,
+    firstBrewedText,
+    phText,
+    ibuText,
+  } = props;
 
   return (
     <div class="card">
@@ -12,10 +25,22 @@ const Card = (props) => {
           <div className="card__front-info">
             <h3 className="card__front-heading">{name}</h3>
             <div className="card__front-extra">
-              <p>ABV: {abv}%</p>
-              <p>First Brewed: {yearBrewed}</p>
-              <p>IBU: {ibu}</p>
-              <p>pH: {pH}</p>
+              <p>
+                <span>{abvText}</span>
+                {abv}%
+              </p>
+              <p>
+                <span>{firstBrewedText}</span>
+                {yearBrewed}
+              </p>
+              <p>
+                <span>{ibuText}</span>
+                {ibu}
+              </p>
+              <p>
+                <span>{phText}</span>
+                {pH}
+              </p>
             </div>
           </div>
         </div>

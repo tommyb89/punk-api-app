@@ -1,8 +1,0 @@
-.beer-gallery {
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  background-color: white;
-  padding: 10px;
-}

@@ -36,9 +36,17 @@ const App = () => {
       .then((beersObj) => setBeers(beersObj));
   };
 
+  const filterAcidic = () => {
+    if (isAcidic) {
+      fetch(URL)
+        .then((res) => res.json())
+        .then((beersObj) => setBeers(beersObj.filter((beer) => beer.ph < 4)));
+    }
+  };
+
   useEffect(() => {
-    fetchBeers();
-  }, []);
+    filterAcidic();
+  }, [isAcidic]);
 
   useEffect(() => {
     fetchBeers();
@@ -50,6 +58,7 @@ const App = () => {
         handleInput={handleInput}
         handleClassic={handleClassic}
         handleHighAbv={handleHighAbv}
+        handleAcidic={handleAcidic}
       />
       {beers && <Main beers={beers} />}
     </div>
