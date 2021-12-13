@@ -2,6 +2,8 @@
 
 This project was created entirely in React
 
+It's hosted on Github Pages -> [Punk API](https://tommyb89.github.io/punk-api-app/ "Punk API React")
+
 ## About
 
 For this project we were asked to fetch data from Brewdog Catalogue using Punk API and display it in the form of cards
