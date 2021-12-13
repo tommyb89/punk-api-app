@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Card.scss";
 
 const Card = (props) => {
@@ -47,7 +47,6 @@ const Card = (props) => {
 
         <div className="card__back">
           <h3 className="card__back-heading">{tag}</h3>
-          <p className="card__back-tagline">Architect & Engineer</p>
           <p className="card__back-description">{info}</p>
         </div>
       </div>

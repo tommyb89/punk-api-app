@@ -5,7 +5,6 @@ import Card from "./Card/Card";
 
 const CardList = (props) => {
   const { beers } = props;
-  console.log(beers);
   return (
     <div className="beer-gallery">
       {beers.map((beer, index) => {
