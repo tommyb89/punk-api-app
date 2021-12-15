@@ -45,13 +45,13 @@ const App = () => {
   };
   filterAcidic();
 
-  useEffect(() => {
-    filterAcidic();
-  }, [isAcidic]);
+  // useEffect(() => {
+  //   filterAcidic();
+  // }, [isAcidic]);
 
   useEffect(() => {
     fetchBeers();
-  }, [searchTerm, isClassic, isHighAbv]);
+  }, [fetchBeers, isClassic, isHighAbv, searchTerm]);
 
   return (
     <div className="app">
