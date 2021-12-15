@@ -37,12 +37,13 @@ const App = () => {
   };
 
   const filterAcidic = () => {
-    if (isAcidic) {
-      fetch(URL)
-        .then((res) => res.json())
-        .then((beersObj) => setBeers(beersObj.filter((beer) => beer.ph < 4)));
-    }
+    beers.filter((beer) => {
+      const acidicBeert = beer.ph < 4;
+      console.log(acidicBeert);
+      return acidicBeert.name;
+    });
   };
+  filterAcidic();
 
   useEffect(() => {
     filterAcidic();
@@ -56,6 +57,7 @@ const App = () => {
     <div className="app">
       <NavBar
         handleInput={handleInput}
+        searchTerm={searchTerm}
         handleClassic={handleClassic}
         handleHighAbv={handleHighAbv}
         handleAcidic={handleAcidic}
