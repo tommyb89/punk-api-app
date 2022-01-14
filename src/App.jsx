@@ -19,6 +19,7 @@ const App = () => {
     const filteredInput = e.target.value.toLowerCase();
     setSeachTerm(filteredInput);
   };
+  
   // Handle checkboxes
   const handleHighAbv = (e) => setIsHighAbv(e.target.checked);
   const handleClassic = (e) => setIsClassic(e.target.checked);
@@ -35,15 +36,15 @@ const App = () => {
       .then((res) => res.json())
       .then((beersObj) => setBeers(beersObj));
   };
-
-  const filterAcidic = () => {
-    beers.filter((beer) => {
-      const acidicBeert = beer.ph < 4;
-      console.log(acidicBeert);
-      return acidicBeert.name;
-    });
-  };
-  filterAcidic();
+}
+  // const filterAcidic = () => {
+  //   beers.filter((beer) => {
+  //     const acidicBeert = beer.ph < 4;
+  //     console.log(acidicBeert);
+  //     return acidicBeert.name;
+  //   });
+  // };
+  // filterAcidic();
 
   // useEffect(() => {
   //   filterAcidic();
@@ -51,7 +52,7 @@ const App = () => {
 
   useEffect(() => {
     fetchBeers();
-  }, [fetchBeers, isClassic, isHighAbv, searchTerm]);
+  },  [isClassic, isHighAbv, searchTerm]);
 
   return (
     <div className="app">
